@@ -32,8 +32,10 @@ function makeGrid() {
   }
 
 //Event Listeners for changing color and size
-const colorPicker = document.getElementById('colorPicker');
-color = colorPicker.value;
+$('body').on('click', 'td', function() {
+	var color = document.getElementById('colorPicker').value;
+    $(this).css('background-color', color);
+});
 
 sizePicker.onsubmit = function(event){
   event.preventDefault();
